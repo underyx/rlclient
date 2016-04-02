@@ -40,7 +40,7 @@ and `RLCLIENT_ENVIRONMENT` environment variables, and pass no parameters.
 
 The basic usage goes like this:
 
-```
+```python
 >>> from rlclient import RocketLeagueClient
 >>> client = RocketLeagueClient()  # auth details are set in the environment
 >>> call = client.GetPopulationAllPlaylists()
@@ -51,7 +51,7 @@ The basic usage goes like this:
 The client supports grouping multiple calls into one request, too, if the
 call happens to support this on the backend:
 
-```
+```python
 >>> calls = [
 ...     client.GetSkillLeaderboard_v2(10),
 ...     client.GetSkillLeaderboard_v2(11),
@@ -65,7 +65,7 @@ call happens to support this on the backend:
 If the call doesn't support this on the backend… don't worry! I've still got
 your back. The client is smart enough to figure out all of it:
 
-```
+```python
 >>> calls = [
 ...     client.GetPopulationAllPlaylists(),
 ...     client.GetSkillLeaderboard_v2(10),   #\
