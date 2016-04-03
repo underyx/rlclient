@@ -4,15 +4,7 @@
 
 A client to communicate with the Rocket League game coordinator servers.
 
-A few things to keep in mind:
-
- - You need to authenticate yourself with the API. I just grabbed authentication
-   details from a running game session, and they haven't expired during the time
-   it took for me to write this clients, so I hope the auth process just checks
-   if the provided session ID and key match each other via some algorithm, and
-   there's no actual state stored on the backend that would expire sessions
-   after a while. But, of course, I have no idea, so this client might be
-   completely useless until someone figures out how to generate session keys.
+Two things to keep in mind:
 
  - This package is expected to change a lot between versions. If you want to use
    it, pin the requirement spec to the latest version! A minor version will be
@@ -30,11 +22,14 @@ pip3.5 install rlclient
 
 ## Configuration
 
-Instantiate the client with `RocketLeagueClient('session_id', 'session_key')`.
-You can change the environment from the default `Prod` with the third parameter.
+Instantiate the client with `RocketLeagueClient('login_key', 'session_key')`.
+You can pass a specific session ID in the third parameter (and omit the login
+key which is only used for opening sessions) or even change the environment
+from the default `Prod` with the fourth parameter.
 
-Alternatively, you can use the `RLCLIENT_SESSION_ID`, `RLCLIENT_SESSION_KEY`,
-and `RLCLIENT_ENVIRONMENT` environment variables, and pass no parameters.
+Alternatively, you can use the `RLCLIENT_LOGIN_KEY`, `RLCLIENT_SESSION_KEY`,
+`RLCLIENT_SESSION_ID` and `RLCLIENT_ENVIRONMENT` environment variables, and pass
+no parameters to the client in your code.
 
 ## Usage
 
