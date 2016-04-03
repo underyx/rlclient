@@ -37,7 +37,7 @@ class RocketLeagueClient:
 
     def request(self, calls):
         self.request_counter += 1
-        if self.request_counter > 10:
+        if self.request_counter > 10 and not self.login_key:
             raise UserWarning(
                 "You're making lots of requests without a login key. "
                 "If your session expires I won't be able to open a new one automatically!"

@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='rlclient',
-    version='0.2.0',
+    version='0.2.1',
     url='https://github.com/underyx/rlclient',
     author='Bence Nagy',
     author_email='bence@underyx.me',
